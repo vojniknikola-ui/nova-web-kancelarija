@@ -1,5 +1,4 @@
-const { locales, defaultLocale } = require('./i18n-config');
-
+const { locales, defaultLocale } = require('./i18n-settings.json');
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   i18n: {
@@ -10,5 +9,4 @@ const nextConfig = {
     typedRoutes: true,
   },
 };
-
 module.exports = nextConfig;

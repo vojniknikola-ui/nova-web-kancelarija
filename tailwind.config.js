@@ -1,4 +1,4 @@
-const { locales } = require('./i18n-config');
+const { locales } = require('./i18n-settings.json');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
