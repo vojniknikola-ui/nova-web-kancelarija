@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  min-height: 100vh;
+}
+
+main {
+  min-height: 60vh;
+}
+
+.section-heading {
+  @apply text-3xl font-serif text-primary mb-6;
+}
