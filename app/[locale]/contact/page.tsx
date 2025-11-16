@@ -23,7 +23,7 @@ export default async function ContactPage({ params }: { params: { locale: Locale
               Telefon: <a href="tel:+38761111222" className="text-secondary">+387 61 111 222</a>
               <br /> Email: <a href="mailto:kontakt@andriclaw.com" className="text-secondary">kontakt@andriclaw.com</a>
             </p>
-            <p>Radno vrijeme: Pon–Pet 09:00–17:00</p>
+            <p>{dictionary.contact.workingHours}</p>
           </div>
           <div className="mt-6">
             <GoogleMap />
@@ -37,7 +37,7 @@ export default async function ContactPage({ params }: { params: { locale: Locale
               : 'We respond within one business day. Your information is confidential and used solely to follow up.'}
           </p>
           <div className="mt-6">
-            <ContactForm />
+            <ContactForm dictionary={dictionary} />
           </div>
         </div>
       </div>

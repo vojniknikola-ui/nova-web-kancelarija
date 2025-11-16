@@ -34,14 +34,14 @@ export default function Header({ dictionary, locale }: HeaderProps) {
   return (
     <header className="bg-white shadow-sm">
       <div className="container mx-auto flex items-center justify-between px-4 py-4">
-        <Link href={`/${locale}`} className="text-2xl font-serif text-primary">
+        <Link href={`/${locale}` as any} className="text-2xl font-serif text-primary">
           Andrić Law
         </Link>
         <div className="hidden items-center gap-6 md:flex">
           {navItems.map((item) => (
             <Link
               key={item.href}
-              href={item.href}
+              href={item.href as any}
               className={`text-sm font-semibold uppercase tracking-wide transition hover:text-secondary ${pathname === item.href ? 'text-secondary' : 'text-slate-700'}`}
             >
               {item.label}
@@ -80,7 +80,7 @@ export default function Header({ dictionary, locale }: HeaderProps) {
           <ul className="space-y-2 border-t border-slate-100 bg-white px-4 py-4">
             {navItems.map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className="block py-1 text-slate-700" onClick={() => setIsMenuOpen(false)}>
+                <Link href={item.href as any} className="block py-1 text-slate-700" onClick={() => setIsMenuOpen(false)}>
                   {item.label}
                 </Link>
               </li>

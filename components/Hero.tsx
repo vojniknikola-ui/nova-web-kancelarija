@@ -31,11 +31,10 @@ export default function Hero({ dictionary, locale }: HeroProps) {
           </div>
         </div>
         <div className="rounded-2xl bg-white/10 p-8 shadow-2xl backdrop-blur">
-          <p className="text-xs uppercase tracking-[0.3em] text-secondary">Geo optimizovano</p>
-          <p className="mt-3 text-2xl font-serif">Pravna kancelarija usklađena sa digitalnim očekivanjima klijenata.</p>
+          <p className="text-xs uppercase tracking-[0.3em] text-secondary">{dictionary.hero.geoOptimized}</p>
+          <p className="mt-3 text-2xl font-serif">{dictionary.hero.geoDescription}</p>
           <p className="mt-4 text-sm text-slate-100">
-            Uključujemo lokalni SEO, strukturirane podatke i jasno istaknute CTA elemente kako bi vas klijenti lakše pronašli i
-            kontaktirali.
+            {dictionary.hero.geoDetails}
           </p>
         </div>
       </div>

@@ -37,9 +37,9 @@ export default async function HomePage({ params }: { params: { locale: Locale } 
           </ol>
         </div>
       </section>
-      <PracticeAreas locale={params.locale} />
+      <PracticeAreas locale={params.locale} dictionary={dictionary} />
       <ArticlesPreview locale={params.locale} />
-      <Testimonials />
+      <Testimonials dictionary={dictionary} />
       <section className="bg-primary py-16 text-white">
         <div className="container mx-auto flex flex-col gap-6 px-4 text-center">
           <p className="text-sm uppercase tracking-[0.3em] text-secondary">CTA</p>

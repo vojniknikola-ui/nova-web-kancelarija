@@ -26,11 +26,11 @@ export default function Footer({ dictionary, locale }: FooterProps) {
           </p>
         </div>
         <div>
-          <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-slate-400">Quick links</p>
+          <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-slate-400">{dictionary.footer.quickLinks}</p>
           <ul className="space-y-2 text-sm">
             {quickLinks(locale).map((link) => (
               <li key={link.href}>
-                <Link href={link.href} className="hover:text-secondary">
+                <Link href={link.href as any} className="hover:text-secondary">
                   {link.label}
                 </Link>
               </li>
@@ -38,10 +38,10 @@ export default function Footer({ dictionary, locale }: FooterProps) {
           </ul>
         </div>
         <div>
-          <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-slate-400">Kontakt</p>
-          <p>Ulica Maršala Tita 12, 71000 Sarajevo</p>
-          <p>Telefon: <a href="tel:+38761111222" className="text-secondary">+387 61 111 222</a></p>
-          <p>Email: <a href="mailto:kontakt@andriclaw.com" className="text-secondary">kontakt@andriclaw.com</a></p>
+          <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-slate-400">{dictionary.footer.contact}</p>
+          <p>{dictionary.footer.address}</p>
+          <p>{dictionary.footer.phone}: <a href="tel:+38761111222" className="text-secondary">+387 61 111 222</a></p>
+          <p>{dictionary.footer.email}: <a href="mailto:kontakt@andriclaw.com" className="text-secondary">kontakt@andriclaw.com</a></p>
           <div className="mt-4 flex gap-4 text-lg">
             <a href="https://www.linkedin.com" className="hover:text-secondary" aria-label="LinkedIn">
               in
@@ -53,7 +53,7 @@ export default function Footer({ dictionary, locale }: FooterProps) {
         </div>
       </div>
       <div className="border-t border-slate-800 px-4 py-4 text-center text-xs text-slate-500">
-        © {new Date().getFullYear()} Andrić Law. Sva prava zadržana.
+        {dictionary.footer.copyright.replace('{year}', new Date().getFullYear().toString())}
       </div>
     </footer>
   );

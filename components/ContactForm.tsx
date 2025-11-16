@@ -1,8 +1,13 @@
 'use client';
 
 import { FormEvent, useState } from 'react';
+import type { AwaitedReturn } from '../types/utils';
 
-export default function ContactForm() {
+type ContactFormProps = {
+  dictionary: AwaitedReturn<typeof import('../lib/dictionary')['getDictionary']>;
+};
+
+export default function ContactForm({ dictionary }: ContactFormProps) {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -30,7 +35,7 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-4">
       <div>
         <label className="block text-sm font-semibold text-slate-600" htmlFor="name">
-          Ime i prezime
+          {dictionary.contactForm.name}
         </label>
         <input
           id="name"
@@ -42,7 +47,7 @@ export default function ContactForm() {
       <div className="grid gap-4 md:grid-cols-2">
         <div>
           <label className="block text-sm font-semibold text-slate-600" htmlFor="email">
-            Email
+            {dictionary.contactForm.email}
           </label>
           <input
             id="email"
@@ -54,14 +59,14 @@ export default function ContactForm() {
         </div>
         <div>
           <label className="block text-sm font-semibold text-slate-600" htmlFor="phone">
-            Telefon
+            {dictionary.contactForm.phone}
           </label>
           <input id="phone" name="phone" className="mt-1 w-full rounded-xl border border-slate-200 px-4 py-3" />
         </div>
       </div>
       <div>
         <label className="block text-sm font-semibold text-slate-600" htmlFor="message">
-          Poruka
+          {dictionary.contactForm.message}
         </label>
         <textarea
           id="message"
@@ -76,10 +81,10 @@ export default function ContactForm() {
         disabled={status === 'loading'}
         className="w-full rounded-full bg-primary px-6 py-3 font-semibold text-white transition hover:bg-primary/90"
       >
-        {status === 'loading' ? 'Slanje...' : 'Pošalji poruku'}
+        {status === 'loading' ? dictionary.contactForm.sending : dictionary.contactForm.sendMessage}
       </button>
-      {status === 'success' && <p className="text-sm text-green-600">Poruka je uspješno poslana.</p>}
-      {status === 'error' && <p className="text-sm text-red-600">Došlo je do greške. Pokušajte ponovo.</p>}
+      {status === 'success' && <p className="text-sm text-green-600">{dictionary.contactForm.success}</p>}
+      {status === 'error' && <p className="text-sm text-red-600">{dictionary.contactForm.error}</p>}
     </form>
   );
 }
