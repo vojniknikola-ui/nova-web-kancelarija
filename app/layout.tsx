@@ -1,6 +1,7 @@
 import './globals.css';
 import type { ReactNode } from 'react';
 import { Source_Sans_3, Merriweather } from 'next/font/google';
+import { ReCaptchaProvider } from 'next-recaptcha-v3';
 import { Metadata } from 'next';
 
 const sourceSans = Source_Sans_3({ subsets: ['latin'], variable: '--font-sans' });

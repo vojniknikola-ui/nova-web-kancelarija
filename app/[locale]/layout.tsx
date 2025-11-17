@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import MobileCallButton from '../../components/MobileCallButton';
+import CookieConsentBanner from '../../components/CookieConsent';
 import { getDictionary } from '../../lib/dictionary';
 import { locales, type Locale } from '../../i18n-config';
 
@@ -45,6 +46,7 @@ export default async function LocaleLayout({
       <main className="flex-1 bg-slate-50">{children}</main>
       <Footer dictionary={dictionary} locale={params.locale} />
       <MobileCallButton />
+      <CookieConsentBanner dictionary={dictionary} locale={params.locale} />
     </div>
   );
 }

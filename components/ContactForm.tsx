@@ -1,17 +1,25 @@
 'use client';
 
 import { FormEvent, useState } from 'react';
+import { useReCaptcha } from 'next-recaptcha-v3';
 import type { AwaitedReturn } from '../types/utils';
 
 type ContactFormProps = {
   dictionary: AwaitedReturn<typeof import('../lib/dictionary')['getDictionary']>;
+  locale: string;
 };
 
-export default function ContactForm({ dictionary }: ContactFormProps) {
+export default function ContactForm({ dictionary, locale }: ContactFormProps) {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [consent, setConsent] = useState(false);
+  const { executeRecaptcha } = useReCaptcha();
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (!consent) {
+      alert(locale === 'bs' ? 'Morate prihvatiti obradu podataka.' : 'You must accept data processing.');
+      return;
+    }
     setStatus('loading');
     const formData = new FormData(event.currentTarget);
     const payload = Object.fromEntries(formData.entries());
@@ -25,6 +33,7 @@ export default function ContactForm({ dictionary }: ContactFormProps) {
       if (!response.ok) throw new Error('Request failed');
       setStatus('success');
       event.currentTarget.reset();
+      setConsent(false);
     } catch (error) {
       console.error(error);
       setStatus('error');
@@ -75,6 +84,22 @@ export default function ContactForm({ dictionary }: ContactFormProps) {
           required
           className="mt-1 w-full rounded-xl border border-slate-200 px-4 py-3"
         />
+      </div>
+      <div className="mb-4">
+        <label className="flex items-center">
+          <input
+            type="checkbox"
+            checked={consent}
+            onChange={(e) => setConsent(e.target.checked)}
+            className="mr-2"
+            required
+          />
+          <span className="text-sm text-slate-600">
+            {locale === 'bs'
+              ? 'Prihvatam obradu ličnih podataka u skladu sa politikom privatnosti.'
+              : 'I accept the processing of personal data in accordance with the privacy policy.'}
+          </span>
+        </label>
       </div>
       <button
         type="submit"

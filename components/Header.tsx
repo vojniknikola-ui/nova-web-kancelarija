@@ -21,7 +21,9 @@ export default function Header({ dictionary, locale }: HeaderProps) {
     { label: dictionary.navigation.about, href: `/${locale}/about` },
     { label: dictionary.navigation.lawviewer, href: `/${locale}/lawviewer` },
     { label: dictionary.navigation.news, href: `/${locale}/news` },
+    { label: dictionary.navigation.booking, href: `/${locale}/booking` },
     { label: dictionary.navigation.contact, href: `/${locale}/contact` },
+    { label: dictionary.navigation.privacy, href: `/${locale}/privacy` },
   ];
 
   const handleLocaleChange = (nextLocale: Locale) => {

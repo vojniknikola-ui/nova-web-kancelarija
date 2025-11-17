@@ -5,7 +5,7 @@ import { getSortedPostsData } from '../lib/posts';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://andriclaw.com';
-  const staticPaths = ['/', '/about', '/lawviewer', '/news', '/contact'];
+  const staticPaths = ['/', '/about', '/lawviewer', '/news', '/contact', '/privacy'];
   const entries: MetadataRoute.Sitemap = [];
 
   locales.forEach((locale) => {

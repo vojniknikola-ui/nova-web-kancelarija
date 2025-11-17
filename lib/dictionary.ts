@@ -7,6 +7,8 @@ type Dictionary = {
     lawviewer: string;
     news: string;
     contact: string;
+    booking: string;
+    privacy: string;
   };
   hero: {
     title: string;
@@ -64,6 +66,26 @@ type Dictionary = {
     success: string;
     error: string;
   };
+  booking: {
+    heading: string;
+    subheading: string;
+    formTitle: string;
+    detailsTitle: string;
+    formDescription: string;
+  };
+  bookingForm: {
+    name: string;
+    email: string;
+    phone: string;
+    date: string;
+    time: string;
+    service: string;
+    message: string;
+    sending: string;
+    bookAppointment: string;
+    success: string;
+    error: string;
+  };
   practiceAreas: {
     heading: string;
     areas: {
@@ -105,6 +127,17 @@ type Dictionary = {
       footer: string;
     };
   };
+  privacy: {
+    title: string;
+    lastUpdated: string;
+    introduction: string;
+    dataCollection: string;
+    dataUsage: string;
+    dataSharing: string;
+    dataRights: string;
+    cookies: string;
+    contact: string;
+  };
 };
 
 const dictionaries: Record<Locale, Dictionary> = {
@@ -115,6 +148,8 @@ const dictionaries: Record<Locale, Dictionary> = {
       lawviewer: 'LawViewer',
       news: 'Vijesti',
       contact: 'Kontakt',
+      booking: 'Zakazivanje',
+      privacy: 'Privatnost',
     },
     hero: {
       title: 'Andrić Law – savremeno advokatsko iskustvo',
@@ -174,6 +209,26 @@ const dictionaries: Record<Locale, Dictionary> = {
       success: 'Poruka je uspješno poslana.',
       error: 'Došlo je do greške. Pokušajte ponovo.',
     },
+    booking: {
+      heading: 'Zakazite konsultacije',
+      subheading: 'Otvoreni smo za telefonske pozive, e-mail i zakazivanje termina u kancelariji.',
+      formTitle: 'Zakazite termin',
+      detailsTitle: 'Kontakt podaci',
+      formDescription: 'Odgovaramo u roku od jednog radnog dana. Vaši podaci su zaštićeni i koriste se isključivo za povratni kontakt.',
+    },
+    bookingForm: {
+      name: 'Ime i prezime',
+      email: 'Email',
+      phone: 'Telefon',
+      date: 'Datum',
+      time: 'Vrijeme',
+      service: 'Vrsta usluge',
+      message: 'Poruka',
+      sending: 'Zakazivanje...',
+      bookAppointment: 'Zakazite termin',
+      success: 'Termin je uspješno zakazan.',
+      error: 'Došlo je do greške. Pokušajte ponovo.',
+    },
     practiceAreas: {
       heading: 'Ključne oblasti rada',
       areas: [
@@ -231,6 +286,17 @@ const dictionaries: Record<Locale, Dictionary> = {
         footer: '© Andrić Law | andriclaw.com',
       },
     },
+    privacy: {
+      title: 'Politika privatnosti',
+      lastUpdated: 'Posljednje ažuriranje: {date}',
+      introduction: 'Ova politika privatnosti opisuje kako Andrić Law prikuplja, koristi i štiti vaše lične podatke kada koristite našu web stranicu.',
+      dataCollection: 'Prikupljanje podataka: Prikupljamo podatke koje nam dobrovoljno dostavite putem kontakt forme, uključujući ime, email, telefon i poruku.',
+      dataUsage: 'Upotreba podataka: Vaši podaci se koriste isključivo za odgovor na vaše upite i pružanje pravnih usluga.',
+      dataSharing: 'Dijeljenje podataka: Ne dijelimo vaše podatke sa trećim stranama bez vaše saglasnosti, osim ako je zakonom obavezno.',
+      dataRights: 'Vaša prava: Imate pravo na pristup, ispravku i brisanje vaših podataka. Kontaktirajte nas za više informacija.',
+      cookies: 'Kolačići: Koristimo kolačiće za poboljšanje vašeg iskustva na web stranici. Možete ih kontrolisati u postavkama vašeg pregledača.',
+      contact: 'Kontakt: Za pitanja o ovoj politici, kontaktirajte nas na info@andriclaw.com.',
+    },
   },
   en: {
     navigation: {
@@ -239,6 +305,8 @@ const dictionaries: Record<Locale, Dictionary> = {
       lawviewer: 'LawViewer',
       news: 'News',
       contact: 'Contact',
+      booking: 'Booking',
+      privacy: 'Privacy',
     },
     hero: {
       title: 'Andrić Law – contemporary legal counsel',
@@ -298,6 +366,26 @@ const dictionaries: Record<Locale, Dictionary> = {
       success: 'Message sent successfully.',
       error: 'An error occurred. Please try again.',
     },
+    booking: {
+      heading: 'Schedule a consultation',
+      subheading: 'We are available for phone calls, emails, and appointment scheduling at the office.',
+      formTitle: 'Book an appointment',
+      detailsTitle: 'Contact details',
+      formDescription: 'We respond within one business day. Your information is confidential and used solely to follow up.',
+    },
+    bookingForm: {
+      name: 'Full name',
+      email: 'Email',
+      phone: 'Phone',
+      date: 'Date',
+      time: 'Time',
+      service: 'Service type',
+      message: 'Message',
+      sending: 'Booking...',
+      bookAppointment: 'Book appointment',
+      success: 'Appointment booked successfully.',
+      error: 'An error occurred. Please try again.',
+    },
     practiceAreas: {
       heading: 'Key practice areas',
       areas: [
@@ -354,6 +442,17 @@ const dictionaries: Record<Locale, Dictionary> = {
         categoryYear: 'Category: {category} | Year: {year}',
         footer: '© Andrić Law | andriclaw.com',
       },
+    },
+    privacy: {
+      title: 'Privacy Policy',
+      lastUpdated: 'Last updated: {date}',
+      introduction: 'This privacy policy describes how Andrić Law collects, uses, and protects your personal data when you use our website.',
+      dataCollection: 'Data Collection: We collect data that you voluntarily provide through the contact form, including name, email, phone, and message.',
+      dataUsage: 'Data Usage: Your data is used solely to respond to your inquiries and provide legal services.',
+      dataSharing: 'Data Sharing: We do not share your data with third parties without your consent, except as required by law.',
+      dataRights: 'Your Rights: You have the right to access, correct, and delete your data. Contact us for more information.',
+      cookies: 'Cookies: We use cookies to improve your experience on the website. You can control them in your browser settings.',
+      contact: 'Contact: For questions about this policy, contact us at info@andriclaw.com.',
     },
   },
 };
